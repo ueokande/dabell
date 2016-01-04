@@ -1,0 +1,18 @@
+sudo: false
+bundler_args: "--without development --deployment"
+language: ruby
+cache: bundler
+rvm:
+- 2.3.0
+env:
+  global:
+  - DATABASE_URL=mysql2://travis@localhost/dabell_test
+  - RAILS_ENV=test
+services:
+- mysql
+before_install:
+- 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
+before_script:
+- bundle exec rake db:create db:migrate
+script:
+- bundle exec rake spec
