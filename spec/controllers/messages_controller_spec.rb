@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe MessagesController, type: :controller do
 
+  before { sign_in FactoryGirl.create(:user) }
+
   let(:valid_attributes) {
     FactoryGirl.attributes_for(:message,
                                user_id: FactoryGirl.create(:user).id)
