@@ -15,6 +15,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'byebug'
   gem 'dotenv-rails'
+  gem 'factory_girl_rails'
 end
 
 group :development do
