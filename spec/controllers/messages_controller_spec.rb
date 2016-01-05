@@ -36,6 +36,10 @@ RSpec.describe MessagesController, type: :controller do
   # MessagesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  before :each do
+    request.env["HTTP_ACCEPT"] = 'application/json'
+  end
+
   describe "GET #index" do
     it "assigns all messages as @messages" do
       message = Message.create! valid_attributes
@@ -48,21 +52,6 @@ RSpec.describe MessagesController, type: :controller do
     it "assigns the requested message as @message" do
       message = Message.create! valid_attributes
       get :show, {:id => message.to_param}, valid_session
-      expect(assigns(:message)).to eq(message)
-    end
-  end
-
-  describe "GET #new" do
-    it "assigns a new message as @message" do
-      get :new, {}, valid_session
-      expect(assigns(:message)).to be_a_new(Message)
-    end
-  end
-
-  describe "GET #edit" do
-    it "assigns the requested message as @message" do
-      message = Message.create! valid_attributes
-      get :edit, {:id => message.to_param}, valid_session
       expect(assigns(:message)).to eq(message)
     end
   end
@@ -96,47 +85,6 @@ RSpec.describe MessagesController, type: :controller do
       it "re-renders the 'new' template" do
         post :create, {:message => invalid_attributes}, valid_session
         expect(response).to render_template("new")
-      end
-    end
-  end
-
-  describe "PUT #update" do
-    context "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
-
-      it "updates the requested message" do
-        message = Message.create! valid_attributes
-        put :update, {:id => message.to_param, :message => new_attributes}, valid_session
-        message.reload
-        skip("Add assertions for updated state")
-      end
-
-      it "assigns the requested message as @message" do
-        message = Message.create! valid_attributes
-        put :update, {:id => message.to_param, :message => valid_attributes}, valid_session
-        expect(assigns(:message)).to eq(message)
-      end
-
-      it "redirects to the message" do
-        message = Message.create! valid_attributes
-        put :update, {:id => message.to_param, :message => valid_attributes}, valid_session
-        expect(response).to redirect_to(message)
-      end
-    end
-
-    context "with invalid params" do
-      it "assigns the message as @message" do
-        message = Message.create! valid_attributes
-        put :update, {:id => message.to_param, :message => invalid_attributes}, valid_session
-        expect(assigns(:message)).to eq(message)
-      end
-
-      it "re-renders the 'edit' template" do
-        message = Message.create! valid_attributes
-        put :update, {:id => message.to_param, :message => invalid_attributes}, valid_session
-        expect(response).to render_template("edit")
       end
     end
   end
