@@ -30,7 +30,6 @@ $chat-linkcolor: #594735;
       a {
         padding: 8px 16px;
         display: inline-block;
-        width: 100%; 
         text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
         &:link, &:visited {
           color: $menu-foreground;
@@ -44,4 +43,36 @@ $chat-linkcolor: #594735;
       }
     }
   }
+}
+
+input[type=submit] {
+  background-color: #585A52;
+  border: none;
+  padding: 8px;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@mixin flash_base {
+  padding: 16px;
+  border: 2px solid red;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  max-width: 800px;
+  margin: 32px auto;
+}
+
+.flash_error {
+  @include flash_base;
+  color: rgb(58, 135, 173);
+  border-color: rgb(58, 135, 173);
+  background-color: rgb(217, 237, 247);
+}
+
+.flash_alert {
+  @include flash_base;
+  color: rgb(185, 74, 72);
+  border-color: rgb(185, 74, 72);
+  background-color: rgb(242, 222, 222);
 }
