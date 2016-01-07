@@ -1,0 +1,47 @@
+//= require_tree .
+//= require_self
+//= require font-awesome
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","Meiryo","メイリオ","Osaka","MS PGothic",arial,helvetica,sans-serif;
+}
+
+$menu-foreground: #efefff;
+$menu-background: #023550;
+$menu-background-lighter: #028A9E;
+$chat-background: #fff;
+$chat-foreground: #333;
+$chat-linkcolor: #594735;
+
+.global_nav {
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    background-color: $menu-background;
+    color: $menu-foreground;
+    li {
+      list-style: none;
+      display: block;
+      a {
+        padding: 8px 16px;
+        display: inline-block;
+        width: 100%; 
+        text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+        &:link, &:visited {
+          color: $menu-foreground;
+          text-decoration: none;
+        }
+        &:active, &:hover{
+          background-color: $menu-background-lighter;
+          color: $menu-foreground;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
