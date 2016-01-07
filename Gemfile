@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'font-awesome-rails'
+gem 'kaminari'
 
 group :development, :test do
   gem 'rspec-rails'
