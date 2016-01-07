@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'rspec-rails'
@@ -22,3 +22,4 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 
+gem 'sdoc', '~> 0.4.0', group: :doc
