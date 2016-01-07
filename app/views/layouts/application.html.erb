@@ -18,6 +18,18 @@
     </ul>
   </nav>
 
+  <% if flash[:error] %>
+    <%= content_tag(:div, 'This is error', class: "flash_error") do %>
+      <i class='fa fa-exclamation-circle'></i> <%= flash[:error] %>
+    <% end %>
+  <% end %>
+
+  <% if flash[:alert] %>
+    <%= content_tag(:div, 'This is error', class: "flash_alert") do %>
+      <i class='fa fa-bell'></i>  <%= flash[:alert] %>
+    <% end %>
+  <% end %>
+
 <%= yield %>
 
 </body>
