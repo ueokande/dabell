@@ -11,7 +11,9 @@
   <nav class='global_nav'>
     <ul>
       <li>
-        <a href='abc'><i class='fa fa-sign-out'></i> Logout</a>
+        <%= link_to destroy_user_session_path, method: 'delete' do %>
+          <i class='fa fa-sign-out'></i> Logout
+        <% end %>
       </li>
     </ul>
   </nav>
