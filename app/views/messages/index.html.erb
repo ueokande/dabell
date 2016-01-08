@@ -1,4 +1,8 @@
-<div id='timeline_area' class='timeline_area'></div>
+<ul id='messages' class='timeline_area'>
+  <%= render @messages %>
+</ul>
+<%= paginate @messages, remote: true %>
+
 <%= form_tag(messages_path(format: 'json'), method: :post, remote: true, id: 'message_post_form', class: 'message_post_form') do |f| %>
   <%= hidden_field_tag 'message[user_id]', current_user.id %>
   <%= text_area :message, :text, placeholder: 'Press Ctrl + Enter to post it', id: 'message_area' %>
