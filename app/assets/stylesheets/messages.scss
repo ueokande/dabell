@@ -6,6 +6,15 @@ $form-height: 80px;
   left: 0;
   right: 0;
   bottom: $form-height;
+  overflow-y: scroll;
+  .message {
+    border-bottom: 1px solid #888;
+    padding: 4px;
+  }
+}
+
+nav.pagination {
+  display: none;
 }
 
 .message_post_form {
