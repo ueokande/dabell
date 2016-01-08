@@ -11,6 +11,9 @@
   <nav class='global_nav'>
     <ul>
       <li>
+        <%= link_to edit_user_registration_path do %>
+          <i class='fa fa-pencil-square-o'></i> Edit profile
+        <% end %>
         <%= link_to destroy_user_session_path, method: 'delete' do %>
           <i class='fa fa-sign-out'></i> Logout
         <% end %>
