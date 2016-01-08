@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'kaminari'
+gem 'paperclip'
 
 group :development, :test do
   gem 'rspec-rails'
