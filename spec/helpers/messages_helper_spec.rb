@@ -1,15 +1,23 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the MessagesHelper. For example:
-#
-# describe MessagesHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe MessagesHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "format" do
+    context "when the text contains breaks" do
+      subject { format("Hello\nworld") }
+      it { should match /br/ }
+      it { should match /<div>/ }
+    end
+
+    context "when the text contains urls" do
+      subject { format("Google on https://google.com/") }
+      it { should match /href/ }
+      it { should match /<a/ }
+    end
+
+    context "when the text contains HTML tags" do
+      subject { format("It is <b>fine</b>") }
+      it { should_not match /<b>/ }
+      it { should match /&lt;b&gt;/ }
+    end
+  end
 end
