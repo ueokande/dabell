@@ -1,5 +1,10 @@
-<li class='message' style='height:48px'>
-  <%= message.user.email %>
-  /
-  <%= message.text %>
+<li class='message'>
+  <%= image_tag message.user.avatar.url, class: 'avatar' %>
+  <p class='created_at'><%= message.created_at.strftime('%Y-%m-%d %H:%M') %></p>
+  <p class='full_name_and_name'>
+    <span class='full_name'><%= message.user.full_name%></span>
+    -
+    <span class='name'><%= message.user.name%></span>
+  </p>
+  <p class='text'><%= message.text%></p>
 </li>

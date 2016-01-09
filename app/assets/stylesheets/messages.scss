@@ -7,9 +7,31 @@ $form-height: 80px;
   right: 0;
   bottom: $form-height;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column-reverse;
   .message {
+    flex: 0 0 auto;
     border-bottom: 1px solid #888;
     padding: 4px;
+    min-height: 64px;
+    list-style: none;
+    .avatar {
+      float: left;
+      display: block;
+      margin-right: 8px;
+    }
+    .full_name_and_name {
+      .full_name {
+        font-weight: bold;
+      }
+      .name {
+      }
+    }
+    .created_at {
+      float: right;
+      color: #888;
+      font-size: .9rem;
+    }
   }
 }
 
