@@ -13,6 +13,9 @@ gem 'devise'
 gem 'font-awesome-rails'
 gem 'kaminari'
 gem 'paperclip'
+gem 'html-pipeline'
+gem 'escape_utils'
+gem 'rinku'
 
 group :development, :test do
   gem 'rspec-rails'
