@@ -16,6 +16,7 @@ gem 'paperclip'
 gem 'html-pipeline'
 gem 'escape_utils'
 gem 'rinku'
+gem 'database_rewinder'
 
 group :development, :test do
   gem 'rspec-rails'
