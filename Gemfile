@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '5.0.0.beta1'
+gem 'puma'
 gem 'mysql2'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
