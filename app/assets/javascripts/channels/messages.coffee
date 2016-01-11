@@ -6,4 +6,7 @@ App.messages = App.cable.subscriptions.create "MessagesChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    # Called when there's incoming data on the websocket for this channel
+    element = $(data['message'])
+    element.prependTo($('#messages')).css('opacity', 0)
+    window.getComputedStyle(element[0]).opacity
+    element.css('opacity', 1)
