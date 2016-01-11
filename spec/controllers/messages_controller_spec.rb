@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe MessagesController, type: :controller do
+RSpec.xdescribe MessagesController, type: :controller do
 
   before { sign_in FactoryGirl.create(:user) }
 
