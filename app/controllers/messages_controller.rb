@@ -1,8 +1,13 @@
 class MessagesController < ApplicationController
+  protect_from_forgery except: :index
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   def index
-    @messages = Message.page(params[:page])
+    @messages = if params[:max_id].present?
+                  Message.where('id <= ?', params[:max_id]).last(25)
+                else
+                  Message.last(25)
+                end
   end
 
   def show

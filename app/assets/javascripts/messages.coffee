@@ -23,18 +23,3 @@ $ ->
       message_area.value = ''
     .on 'ajax:error', (event, xhr, status, error) ->
       alert error
-
-  # To avoid event conflict on turbolinks
-  $(window).off("smartscroll")
-
-  $("#messages").infinitescroll
-    loading: {
-      finishedMsg: "end",
-    }
-    binder: $("#messages"),
-    behavior: 'local',
-    animate: true,
-    maxPage: 20,
-    navSelector: "nav.pagination"
-    nextSelector: "nav.pagination a[rel=next]"
-    itemSelector: "#messages li"

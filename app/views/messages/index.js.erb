@@ -1,0 +1,5 @@
+retrieve = function() {
+  $.getScript("<%= messages_path(max_id: @messages.first.id, format: 'js') %>")
+}
+
+$('#messages').prepend('<%= j(render @messages) %>');

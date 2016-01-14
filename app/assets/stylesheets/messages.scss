@@ -7,8 +7,6 @@ $form-height: 80px;
   right: 0;
   bottom: $form-height;
   overflow-y: scroll;
-  display: flex;
-  flex-direction: column-reverse;
   .message {
     flex: 0 0 auto;
     border-bottom: 1px solid #888;
@@ -34,10 +32,6 @@ $form-height: 80px;
       font-size: .9rem;
     }
   }
-}
-
-nav.pagination {
-  display: none;
 }
 
 .message_post_form {
