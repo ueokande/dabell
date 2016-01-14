@@ -23,3 +23,10 @@ $ ->
       message_area.value = ''
     .on 'ajax:error', (event, xhr, status, error) ->
       alert error
+
+jQuery.fn.scrollBottom = (val) ->
+  elem = $(this[0])
+  if val is undefined
+    return elem[0].scrollHeight - elem.height() - elem.scrollTop()
+  else
+    elem.scrollTop(elem[0].scrollHeight - elem.height() - val)
