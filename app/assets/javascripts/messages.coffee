@@ -24,6 +24,13 @@ $ ->
     .on 'ajax:error', (event, xhr, status, error) ->
       alert error
 
+  $('#messages').on 'scroll', (e) ->
+    scroll = $('#messages').scrollTop()
+    if !window.on_loading && scroll < 32
+      retrieve()
+
+  window.on_loading ?= false
+
 jQuery.fn.scrollBottom = (val) ->
   elem = $(this[0])
   if val is undefined

@@ -1,5 +1,9 @@
 retrieve = function() {
+  window.on_loading = true
   $.getScript("<%= messages_path(max_id: @messages.first.id, format: 'js') %>")
+    .always(function() {
+      window.on_loading = false
+    });
 };
 
 (function () {
