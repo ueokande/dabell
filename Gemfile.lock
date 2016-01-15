@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/amatsuda/kaminari.git
-  revision: 282b2125292d8f4c721dba89510ee4360c071eb0
-  specs:
-    kaminari (1.0.0.alpha)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
-
-GIT
   remote: git://github.com/plataformatec/devise.git
   revision: a321282ccc93d73f9d0f7a1319d3fcab27d25b20
   specs:
@@ -267,7 +259,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
-  kaminari!
   mysql2
   paperclip
   puma
