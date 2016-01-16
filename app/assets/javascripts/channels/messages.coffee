@@ -10,3 +10,4 @@ App.messages = App.cable.subscriptions.create "MessagesChannel",
     element.prependTo($('#messages')).css('opacity', 0)
     window.getComputedStyle(element[0]).opacity
     element.css('opacity', 1)
+    $('#messages').scrollBottom(0)
