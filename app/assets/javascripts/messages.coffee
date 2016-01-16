@@ -24,6 +24,10 @@ $ ->
     .on 'ajax:error', (event, xhr, status, error) ->
       alert error
 
+  $('#message_area').on 'keydown', (e) ->
+    if e.ctrlKey && e.keyCode == 13 # Ctrl + Enter
+      $('#message_post_form').submit()
+
   $('#messages').on 'scroll', (e) ->
     scroll = $('#messages').scrollTop()
     if !window.on_loading && scroll < 32
