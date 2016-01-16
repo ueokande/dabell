@@ -17,13 +17,19 @@ gem 'paperclip'
 gem 'html-pipeline'
 gem 'escape_utils'
 gem 'rinku'
-gem 'database_rewinder'
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
   gem 'byebug'
+  gem 'better_errors'
+
+  gem 'rspec-rails'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
+  gem 'database_rewinder'
 end
 
 group :development do
