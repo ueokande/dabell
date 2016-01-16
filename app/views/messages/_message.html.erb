@@ -1,4 +1,4 @@
-<li class='message'>
+<li class='message <%= "unread" if local_assigns[:broadcast] || message.unread?(current_user) %>'>
   <%= image_tag message.user.avatar.url, class: 'avatar' %>
   <p class='created_at'><%= message.created_at.strftime('%Y-%m-%d %H:%M') %></p>
   <p class='full_name_and_name'>
