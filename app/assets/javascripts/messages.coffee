@@ -24,17 +24,16 @@ $ ->
     .on 'ajax:error', (event, xhr, status, error) ->
       alert error
 
-  # To avoid event conflict on turbolinks
-  $(window).off("smartscroll")
+  $('#messages').on 'scroll', (e) ->
+    scroll = $('#messages').scrollTop()
+    if !window.on_loading && scroll < 32
+      retrieve()
 
-  $("#messages").infinitescroll
-    loading: {
-      finishedMsg: "end",
-    }
-    binder: $("#messages"),
-    behavior: 'local',
-    animate: true,
-    maxPage: 20,
-    navSelector: "nav.pagination"
-    nextSelector: "nav.pagination a[rel=next]"
-    itemSelector: "#messages li"
+  window.on_loading ?= false
+
+jQuery.fn.scrollBottom = (val) ->
+  elem = $(this[0])
+  if val is undefined
+    return elem[0].scrollHeight - elem.height() - elem.scrollTop()
+  else
+    elem.scrollTop(elem[0].scrollHeight - elem.height() - val)
