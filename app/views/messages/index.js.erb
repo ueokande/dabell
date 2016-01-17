@@ -1,13 +1,17 @@
-retrieve = function() {
-  window.on_loading = true
-  $.getScript("<%= messages_path(max_id: @messages.first.id - 1, format: 'js') %>")
-    .always(function() {
-      window.on_loading = false
-    });
-};
+<% if @messages.empty? %>
+  retrieve = function() {}
+<% else %>
+  retrieve = function() {
+    window.on_loading = true
+    $.getScript("<%= messages_path(max_id: @messages.first.id - 1, format: 'js') %>")
+      .always(function() {
+        window.on_loading = false
+      });
+  };
 
-(function () {
-  var offset = $('#messages').scrollBottom();
-  $('#messages').prepend('<%= j(render @messages) %>');
-  $('#messages').scrollBottom(offset);
-})();
+  (function () {
+    var offset = $('#messages').scrollBottom();
+    $('#messages').prepend('<%= j(render @messages) %>');
+    $('#messages').scrollBottom(offset);
+  })();
+<% end %>
