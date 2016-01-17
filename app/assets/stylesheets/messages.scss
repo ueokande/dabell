@@ -31,6 +31,9 @@ $form-height: 80px;
       color: #888;
       font-size: .9rem;
     }
+    &.unread {
+      background-color: #fffed9;
+    }
   }
 }
 

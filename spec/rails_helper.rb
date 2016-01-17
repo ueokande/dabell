@@ -30,6 +30,7 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   # Devise test helpers
   config.include Devise::TestHelpers, type: :controller
+  config.include Devise::TestHelpers, type: :view
   config.include Warden::Test::Helpers, type: :request
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
