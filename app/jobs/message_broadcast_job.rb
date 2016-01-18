@@ -8,6 +8,9 @@ class MessageBroadcastJob < ApplicationJob
         locals: { message: options[:message], broadcast: true })
       ActionCable.server.broadcast('messages_channel',
                                    method: 'create', message: rendered)
+    elsif options[:method] == 'destroy'
+      ActionCable.server.broadcast('messages_channel',
+                                   method: 'destroy', id: options[:id])
     end
   end
 end

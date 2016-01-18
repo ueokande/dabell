@@ -25,6 +25,7 @@ class MessagesController < ApplicationController
 
   def destroy
     @message.destroy
+    MessageBroadcastJob.perform_later(method: 'destroy', id: @message.id)
     head :no_content
   end
 

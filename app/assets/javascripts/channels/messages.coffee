@@ -12,3 +12,9 @@ App.messages = App.cable.subscriptions.create "MessagesChannel",
       window.getComputedStyle(element[0]).opacity
       element.css('opacity', 1)
       $('#messages').scrollBottom(0)
+    else if data['method'] == 'destroy'
+      element = $("[data-message-id=#{data['id']}]")
+      element.css('opacity', 0)
+      setTimeout(
+        -> element.remove()
+      , 300)
