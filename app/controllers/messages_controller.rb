@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.save
       render :show, status: :created, location: @message
-      MessageBroadcastJob.perform_later(@message)
+      MessageBroadcastJob.perform_later(method: 'create', message: @message)
     else
       render json: @message.errors, status: :unprocessable_entity
     end
