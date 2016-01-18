@@ -1,5 +1,10 @@
 <li class='message <%= "unread" if local_assigns[:broadcast] || message.unread?(current_user) %>' data-message-id='<%= message.id %>'>
   <%= image_tag message.user.avatar.url, class: 'avatar' %>
+  <p class='delete_link'>
+    <%= link_to message_path(message), method: :delete do %>
+      <i class="fa fa-trash"></i>
+    <% end %>
+  </p>
   <p class='created_at'><%= message.created_at.strftime('%Y-%m-%d %H:%M') %></p>
   <p class='full_name_and_name'>
     <span class='full_name'><%= message.user.full_name%></span>
