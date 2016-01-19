@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'messages#index'
+  root to: 'rooms#show'
 
   devise_for :users
   resources :messages, only: %i(index show create destroy)
