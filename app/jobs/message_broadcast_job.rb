@@ -6,10 +6,10 @@ class MessageBroadcastJob < ApplicationJob
       rendered = ApplicationController.renderer.render(
         partial: 'messages/message',
         locals: { message: options[:message], broadcast: true })
-      ActionCable.server.broadcast('messages_channel',
+      ActionCable.server.broadcast('room_channel',
                                    method: 'create', message: rendered)
     elsif options[:method] == 'destroy'
-      ActionCable.server.broadcast('messages_channel',
+      ActionCable.server.broadcast('room_channel',
                                    method: 'destroy', id: options[:id])
     end
   end
