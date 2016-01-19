@@ -3,6 +3,6 @@ class Message < ActiveRecord::Base
   belongs_to :user
 
   def unread?(user)
-    user.created_at ? true : created_at > user.last_sign_in_at_was
+    id > user.read_to
   end
 end

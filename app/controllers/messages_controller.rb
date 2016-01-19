@@ -8,6 +8,10 @@ class MessagesController < ApplicationController
                 else
                   Message.last(25)
                 end
+    render
+    if @messages.count > 0 and current_user.read_to < @messages.last.id
+      current_user.update(read_to: @messages.last.id)
+    end
   end
 
   def show

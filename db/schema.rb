@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116065324) do
+ActiveRecord::Schema.define(version: 20160118233300) do
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "text",       limit: 65535
@@ -34,10 +34,7 @@ ActiveRecord::Schema.define(version: 20160116065324) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.datetime "current_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.integer  "sign_in_count",       default: 0
+    t.integer  "read_to",             default: 0
     t.index ["name"], name: "index_users_on_name", unique: true, using: :btree
   end
 
