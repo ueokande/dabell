@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :registerable, :rememberable
+  devise :database_authenticatable, :rememberable
 
   IMAGE_STYLES = { normal: '64x64#' }
   IMAGE_TYPE = %w(image/jpeg image/png image/gif).map(&:freeze)
