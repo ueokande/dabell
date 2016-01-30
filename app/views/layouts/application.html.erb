@@ -10,9 +10,15 @@
 </head>
 <body>
 
-  <nav class='global_nav'>
-    <ul>
-      <% if user_signed_in?  %>
+  <% if user_signed_in?  %>
+    <nav class='global_nav'>
+      <ul>
+        <li>
+          <%= link_to users_path do %>
+            <i class='fa fa-users'></i> Users
+          <% end %>
+        </li>
+
         <li>
           <%= link_to users_edit_path do %>
             <i class='fa fa-pencil-square-o'></i> Edit profile
@@ -23,9 +29,9 @@
             <i class='fa fa-sign-out'></i> Logout
           <% end %>
         </li>
-      <% end %>
-    </ul>
-  </nav>
+      </ul>
+    </nav>
+  <% end %>
 
   <% if flash[:error] %>
     <%= content_tag(:div, 'This is error', class: "flash_error") do %>

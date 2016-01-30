@@ -15,3 +15,9 @@
     <%= render @users %>
   </tbody>
 </table>
+
+<div class='user-container'>
+  <%= link_to new_user_path do %>
+    <i class='fa fa-user-plus'></i> Add user
+  <% end %>
+</div>
