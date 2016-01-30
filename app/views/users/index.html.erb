@@ -1,0 +1,23 @@
+<div class='user-container'>
+  <h2>Users</h2>
+</div>
+
+<table class='user-table'>
+  <thead>
+    <tr>
+      <th></th>
+      <th>ID</th>
+      <th>Full name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @users %>
+  </tbody>
+</table>
+
+<div class='user-container'>
+  <%= link_to new_user_path do %>
+    <i class='fa fa-user-plus'></i> Add user
+  <% end %>
+</div>

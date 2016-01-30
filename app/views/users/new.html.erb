@@ -1,0 +1,24 @@
+<div class='user-container'>
+  <h2>New User</h2>
+
+  <%= form_for(@user) do |f| %>
+    <div class="field">
+      <%= f.label :name%><br />
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+    <div class="field">
+      <%= f.label :full_name %><br />
+      <%= f.text_field :full_name, placeholder: 'Your full name (e.g. Franc Dabell)' %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Add user" %>
+    </div>
+  <% end %>
+
+  <%= link_to "Cancel", root_path %>
+</div>
