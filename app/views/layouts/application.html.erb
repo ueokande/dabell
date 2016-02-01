@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dabell</title>
+  <title><%= app_name %></title>
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
 
@@ -13,6 +13,10 @@
   <% if user_signed_in?  %>
     <nav class='global_nav'>
       <ul>
+        <li class='brand'>
+          <%= link_to app_name, root_path %>
+        </li>
+        <li class='spacer'></li>
         <li>
           <%= link_to users_path do %>
             <i class='fa fa-users'></i> Users
