@@ -34,6 +34,15 @@ end
 
 group :development do
   gem 'web-console', '~> 3.0'
+
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+end
+
+group :production do
+  gem 'unicorn'
 end
 
 gem 'sdoc', '~> 0.4.0', group: :doc
