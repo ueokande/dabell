@@ -1,7 +1,7 @@
 set :stage, :production
 set :rails_env, :production
 
-set :branch, "deploy_with_capistrano"
+set :branch, "deploy"
 
 set :user, "dabell"
 set :deploy_to, "/home/dabell/dabell"
