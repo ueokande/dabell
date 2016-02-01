@@ -16,6 +16,7 @@ gem 'paperclip'
 gem 'html-pipeline'
 gem 'escape_utils'
 gem 'rinku'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'pry-rails'
@@ -26,7 +27,6 @@ group :development, :test do
   gem 'better_errors'
 
   gem 'rspec-rails'
-  gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'database_rewinder'
 end
