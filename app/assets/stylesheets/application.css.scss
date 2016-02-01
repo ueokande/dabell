@@ -21,10 +21,15 @@ $chat-linkcolor: #594735;
 .global_nav {
   ul {
     display: flex;
-    justify-content: flex-end;
     background-color: $menu-background;
     color: $menu-foreground;
     li {
+      &.brand {
+        font-weight: bold;
+      }
+      &.brand {
+        flex-grow: 1;
+      }
       list-style: none;
       display: block;
       a {
