@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/iBenza/devise-kerberos-authenticatable.git
+  revision: 95250aa217150fc55d4ff0de75535c9bb88f0add
+  specs:
+    devise-kerberos-authenticatable (0.1.0)
+      devise
+      timfel-krb5-auth (~> 0.8)
+
+GIT
   remote: git://github.com/plataformatec/devise.git
   revision: a321282ccc93d73f9d0f7a1319d3fcab27d25b20
   specs:
@@ -249,6 +257,7 @@ GEM
     tilt (2.0.2)
     timers (4.1.1)
       hitimes
+    timfel-krb5-auth (0.8.3)
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -276,6 +285,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   database_rewinder
   devise!
+  devise-kerberos-authenticatable!
   dotenv-rails
   escape_utils
   factory_girl_rails
