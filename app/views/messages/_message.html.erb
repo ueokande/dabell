@@ -1,7 +1,7 @@
 <li class='message <%= "unread" if local_assigns[:broadcast] || message.unread?(current_user) %>' data-message-id='<%= message.id %>'>
   <%= image_tag message.user.avatar.url, class: 'avatar' %>
   <p class='delete_link'>
-    <%= link_to message_path(message), method: :delete do %>
+    <%= link_to message_path(message), method: :delete, remote: true do %>
       <i class="fa fa-trash"></i>
     <% end %>
   </p>
