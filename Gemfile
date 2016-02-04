@@ -19,6 +19,8 @@ gem 'rinku'
 gem 'dotenv-rails'
 
 group :development, :test do
+  gem 'rubocop'
+
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-byebug'
