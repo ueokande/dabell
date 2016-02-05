@@ -1,0 +1,29 @@
+Metrics/LineLength:
+  Max: 120
+
+Style/Documentation:
+  Enabled: false
+
+AllCops:
+  Exclude:
+  - 'bin/*'
+  - 'vendor/bundle/**/*'
+  - 'db/**/*'
+  - 'config/**/*'
+
+Style/BlockComments:
+  Exclude:
+  - 'spec/spec_helper.rb'
+
+Style/BlockDelimiters:
+  IgnoredMethods: let
+  Exclude:
+  - 'spec/controllers/**/*'
+
+Style/BracesAroundHashParameters:
+  Exclude:
+  - 'spec/controllers/**/*'
+
+Lint/AmbiguousRegexpLiteral:
+  Exclude:
+  - 'spec/**/*'

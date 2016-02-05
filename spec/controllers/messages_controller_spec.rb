@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.xdescribe MessagesController, type: :controller do
-
   before { sign_in FactoryGirl.create(:user) }
 
   let(:valid_attributes) {
@@ -14,55 +13,54 @@ RSpec.xdescribe MessagesController, type: :controller do
   }
 
   before :each do
-    request.env["HTTP_ACCEPT"] = 'application/json'
+    request.env['HTTP_ACCEPT'] = 'application/json'
   end
 
-  describe "GET #index" do
-    it "assigns all messages as @messages" do
+  describe 'GET #index' do
+    it 'assigns all messages as @messages' do
       message = Message.create! valid_attributes
       get :index, {}
       expect(assigns(:messages)).to eq([message])
     end
   end
 
-  describe "GET #show" do
-    it "assigns the requested message as @message" do
+  describe 'GET #show' do
+    it 'assigns the requested message as @message' do
       message = Message.create! valid_attributes
-      get :show, {:id => message.to_param}
+      get :show, { id: message.to_param }
       expect(assigns(:message)).to eq(message)
     end
   end
 
-  describe "POST #create" do
-    context "with valid params" do
-      it "creates a new Message" do
+  describe 'POST #create' do
+    context 'with valid params' do
+      it 'creates a new Message' do
         expect {
-          post :create, {:message => valid_attributes}
+          post :create, { message: valid_attributes }
         }.to change(Message, :count).by(1)
       end
 
-      it "assigns a newly created message as @message" do
-        post :create, {:message => valid_attributes}
+      it 'assigns a newly created message as @message' do
+        post :create, { message: valid_attributes }
         expect(assigns(:message)).to be_a(Message)
         expect(assigns(:message)).to be_persisted
       end
     end
 
-    context "with invalid params" do
-      it "returns unprocessable_entity" do
-        post :create, {:message => invalid_attributes}
+    context 'with invalid params' do
+      it 'returns unprocessable_entity' do
+        post :create, { message: invalid_attributes }
         expect(response.status).not_to be(200)
       end
     end
   end
 
-  describe "DELETE #destroy" do
-    it "destroys the requested message" do
+  describe 'DELETE #destroy' do
+    it 'destroys the requested message' do
       message = Message.create! valid_attributes
       expect {
-        delete :destroy, {:id => message.to_param}
+        delete :destroy, { id: message.to_param }
       }.to change(Message, :count).by(-1)
     end
   end
-
 end
