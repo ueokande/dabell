@@ -3,4 +3,3 @@ FactoryGirl.define do
     text 'lorem ipsum'
   end
 end
-
